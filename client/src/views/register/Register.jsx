@@ -13,7 +13,7 @@ function Register() {
             if(confirmPassword!==password){
                 alert("Password Mismatch")
             }else{
-                const res= await axios.post('api/user/insertUser',{email,password,confirm_password:confirmPassword})
+                const res= await axios.post('/proxy/api/user/insertUser',{email,password,confirm_password:confirmPassword})
                 localStorage.setItem("token", res.data.user_token)
                 navigate('/home')
             } 

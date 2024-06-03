@@ -8,7 +8,7 @@ function Login() {
     const navigate = useNavigate()
     const handleSubmit =async()=>{
         try{
-            const res= await axios.post('api/user/getUser',{email,password})
+            const res= await axios.post('/proxy/api/user/getUser',{email,password})
             console.log(res)
             localStorage.setItem("token", res.data.user_token)
             navigate('/home')
